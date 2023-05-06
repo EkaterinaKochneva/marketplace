@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/head.html',{
+        "title":"Marketplace"
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/header.html',{})
+            <main class="catalog">
+                <div class="container">
+                    <div class="catalog__top top-catalog">
+                        <div class="top-catalog__title">
+                            <h1>Marketplace</h1>
+                        </div>
+                        <div class="top-catalog__search">
+                            <form class="search">
+                                <input class="search__button" type="submit" name="search" value="Поиск">
+                                <input class="search__input" type="text" name="search-text"  placeholder="Search for a product, flower, etc">
+                            </form>
+                        </div>
+                        <div class="top-catalog__buttons">
+                            <button class="button button--grass button-js active">Buds</button>
+                            <button class="button button--grass button-js">Edible</button>
+                            <button class="button button--grass button-js">Non Edible</button>
+                            <button class="button button--grass button-js">Concentrate</button>
+                        </div>
+                    </div>
+                    <div class="catalog__top-filter top-filter">
+                        <div class="top-filter__row">
+                            <form class="ranges">
+                                <fieldset class="ranges__item range">
+                                    <legend class="range__title">Price Range</legend>                                    
+                                    <div class="range__body">
+                                        <input class="range__slider range-slider-js" type="text" name="my_range"
+                                        data-min="0"
+                                        data-max="9999"
+                                        data-from="0"
+                                        data-to="6550"
+                                        data-postfix=" $" >
+                                        <div class="range__values">
+                                            <label class="range__value">                                                
+                                                <input class="range__input range__input--from" type="text" size="0" onkeydown="this.size=this.value.length">
+                                                <span>$</span>
+                                            </label>
+                                            <label class="range__value">                                                
+                                                <input class="range__input range__input--to" type="text" size="1" onkeydown="this.size=this.value.length">
+                                                <span>$</span>
+                                            </label>
+                                            
+                                            
+                                        </div>    
+                                    </div>  
+                                </fieldset>
+                                <fieldset class="ranges__item range">
+                                    <legend class="range__title">ТНС, %</legend>                                    
+                                    <div class="range__body">
+                                        <input class="range__slider range-slider-js" type="text" name="my_range"
+                                        data-min="0"
+                                        data-max="100"
+                                        data-from="0"
+                                        data-to="65"
+                                        data-postfix=" %" >
+                                        <div class="range__values">
+                                            <label class="range__value">                                                
+                                                <input class="range__input range__input--from" type="text" size="0" onkeydown="this.size=this.value.length">
+                                                <span>%</span>
+                                            </label>
+                                            <label class="range__value">                                                
+                                                <input class="range__input range__input--to" type="text" size="1" onkeydown="this.size=this.value.length">
+                                                <span>%</span>
+                                            </label>
+                                            
+                                            
+                                        </div>    
+                                    </div>  
+                                </fieldset>
+                                <fieldset class="ranges__item range">
+                                    <legend class="range__title">CBD, %</legend>                                    
+                                    <div class="range__body">
+                                        <input class="range__slider range-slider-js" type="text" name="my_range"
+                                        data-min="0"
+                                        data-max="100"
+                                        data-from="0"
+                                        data-to="65"
+                                        data-postfix=" %" >
+                                        <div class="range__values">
+                                            <label class="range__value">                                                
+                                                <input class="range__input range__input--from" type="text" size="0" onkeydown="this.size=this.value.length">
+                                                <span>%</span>
+                                            </label>
+                                            <label class="range__value">                                                
+                                                <input class="range__input range__input--to" type="text" size="1" onkeydown="this.size=this.value.length">
+                                                <span>%</span>
+                                            </label>  
+                                        </div>    
+                                    </div>  
+                                </fieldset>
+                                <fieldset class="ranges__item level">
+                                    <legend class="level__title">Nose</legend>  
+                                    <div class="level__body">
+                                        <input class="level__radio" type="radio" name="nose" value="1" >
+                                        <input class="level__radio" type="radio" name="nose" value="2" >
+                                        <input class="level__radio" type="radio" name="nose" value="3" >
+                                        <input class="level__radio" type="radio" name="nose" value="4" >
+                                        <input class="level__radio" type="radio" name="nose" value="5" checked >
+                                        <input class="level__radio" type="radio" name="nose" value="6" >
+                                        <input class="level__radio" type="radio" name="nose" value="7" >
+                                        <input class="level__radio" type="radio" name="nose" value="8" >
+                                        <input class="level__radio" type="radio" name="nose" value="9" >
+                                        <input class="level__radio" type="radio" name="nose" value="10" >
+                                    </div>
+                                    <div class="level__bottom">
+                                        <span>min</span>
+                                        <span>max</span>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <div class="sort">
+                                <button class="sort__btn">
+                                    <svg class="icon-svg">
+                                        <use xlink:href="img/icons/sprite-icons.svg#filter"></use>
+                                    </svg>
+                                </button>
+                                <div class="sort__filter sort-filter">
+                                    <div class="sort-filter__title">Sort by :</div>
+                                    <div class="sort-filter__body">
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#calendar"></use>
+                                            </svg>
+                                            <span>Date (New first)</span>
+                                        </div>
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#calendar"></use>
+                                            </svg>
+                                            <span>Date (Old first)</span>
+                                        </div>
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#arrow-up"></use>
+                                            </svg>
+                                            <span>Price (High first)</span>
+                                        </div>
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#arrow-down"></use>
+                                            </svg>
+                                            <span>Price (Low first)</span>
+                                        </div>
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#thc-high"></use>
+                                            </svg>
+                                            <span>Total THC (High first)</span>
+                                        </div>
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#thc-low"></use>
+                                            </svg>
+                                            <span>Total THC (Low first)</span>
+                                        </div>
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#cbd-high"></use>
+                                            </svg>
+                                            <span>Total CBD (High first)</span>
+                                        </div>
+                                        <div class="sort-filter__item">
+                                            <svg class="icon-svg">
+                                                <use xlink:href="img/icons/sprite-icons.svg#cbd-low"></use>
+                                            </svg>
+                                            <span>Total CBD (Low first)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="catalog__result-filter result-filter">
+                        <div class="result-filter__amount">1034,5 Results</div>
+                        <div class="result-filter__buttons">
+                            <button class="result-filter__button">100% Indica</button>
+                            <button class="result-filter__button">>50% Indica</button>
+                            <button class="result-filter__button">Indoor</button>
+                            <button class="result-filter__button">Flower</button>
+                            <button class="result-filter__button">Michigan</button>
+                            <button class="result-filter__button">SellerSeller</button>
+                            <button class="result-filter__button">Distributor</button>
+                        </div>
+                    </div>
+                    <div class="catalog__row">
+                        <aside class="catalog__filter">
+                            <button class="filter-close filter-close--js"></button>
+                            <form class="filter">                                
+                                <fieldset class="filter__item">
+                                    <legend>
+                                        <button class="filter__title active" type="button">
+                                            Classification
+                                        </button>                                            
+                                    </legend>
+                                    <div class="filter__body">
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="100% Indica" name="classification" checked>
+                                            <span class="custom-checkbox__text">100% Indica</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="100% Sativa" name="classification">
+                                            <span class="custom-checkbox__text">100% Sativa</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value=">50% Indica" name="classification" checked>
+                                            <span class="custom-checkbox__text">>50% Indica</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value=">50% Sativa" name="classification">
+                                            <span class="custom-checkbox__text">>50% Sativa</span>
+                                        </label>
+                                    </div> 
+                                </fieldset>    
+                                <fieldset class="filter__item">
+                                    <legend>
+                                        <button class="filter__title active" type="button">
+                                            Production Method
+                                        </button>                                            
+                                    </legend>
+                                    <div class="filter__body">
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Indoor" name="Production Method" checked>
+                                            <span class="custom-checkbox__text">Indoor</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Outdoor" name="Production Method" >
+                                            <span class="custom-checkbox__text">Outdoor</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Greenhouse" name="Production Method" >
+                                            <span class="custom-checkbox__text">Greenhouse</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Light Deprivation" name="Production Method" >
+                                            <span class="custom-checkbox__text">Light Deprivation</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Mixed Light" name="Production Method" >
+                                            <span class="custom-checkbox__text">Mixed Light</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Other" name="Production Method" >
+                                            <span class="custom-checkbox__text">Other</span>
+                                        </label>
+                                        
+                                    </div> 
+                                </fieldset>    
+                                <fieldset class="filter__item">
+                                    <legend>
+                                        <button class="filter__title active" type="button">
+                                            Size
+                                        </button>                                            
+                                    </legend>
+                                    <div class="filter__body">
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Flower" name="Size" checked>
+                                            <span class="custom-checkbox__text">Flower</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Pre-Roll Flower" name="Size">
+                                            <span class="custom-checkbox__text">Pre-Roll Flower</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Pre-Roll Infused" name="Size">
+                                            <span class="custom-checkbox__text">Pre-Roll Infused</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Pre-Roll Leaf" name="Size">
+                                            <span class="custom-checkbox__text">Pre-Roll Leaf</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Shake" name="Size">
+                                            <span class="custom-checkbox__text">Shake</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Smalls" name="Size">
+                                            <span class="custom-checkbox__text">Smalls</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Trim" name="Size">
+                                            <span class="custom-checkbox__text">Trim</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Shake" name="Size">
+                                            <span class="custom-checkbox__text">Shake</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Keef" name="Size">
+                                            <span class="custom-checkbox__text">Keef</span>
+                                        </label>
+                                        <label class="filter__input custom-checkbox">
+                                            <input class="custom-checkbox__input" type="checkbox" value="Fresh Frozen" name="Size">
+                                            <span class="custom-checkbox__text">Fresh Frozen</span>
+                                        </label>           
+                                    </div> 
+                                </fieldset>    
+                            </form>
+                        </aside>
+                        <div class="catalog__body">
+                            <button class="filter-open button">Filter</button> 
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque ut veniam esse error quia. Ut repellat sed porro, excepturi earum expedita saepe provident voluptatum quod molestias harum nam facere atque.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque ut veniam esse error quia. Ut repellat sed porro, excepturi earum expedita saepe provident voluptatum quod molestias harum nam facere atque.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque ut veniam esse error quia. Ut repellat sed porro, excepturi earum expedita saepe provident voluptatum quod molestias harum nam facere atque.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque ut veniam esse error quia. Ut repellat sed porro, excepturi earum expedita saepe provident voluptatum quod molestias harum nam facere atque.
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @@include('html/footer.html',{})
+        </div>  
+    </body>
+</html>

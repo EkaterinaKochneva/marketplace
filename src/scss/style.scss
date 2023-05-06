@@ -1,0 +1,85 @@
+// Подключение шрифтов ============================================================================================================================
+@import "fonts";
+
+// Ограничивающий контейнер =======================================================================================================================
+
+// Максимальная ширина контейнера
+$container-max-width: 1430px;
+$laptop: 1460px; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+
+// Расстояние между элементами для контейнера и сетке
+$grid-gap: 30px;
+$grid-gap-side: calc($grid-gap / 2);
+
+.container {
+    margin: 0 auto;
+    max-width: $container-max-width;
+    padding-left: $grid-gap-side;
+    padding-right: $grid-gap-side;
+
+    @media (max-width:$laptop){
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+// Шрифт по умолчанию Основные переменные ==============================================================================================================================================================================================================================================================================
+
+$fontFamily: "ProximaNova";
+$fontSize: 16px; // где 14(px) - размер шрифта по умолчанию из макета
+
+// Основные переменные ====================================================
+
+:root {
+    --bg-color: #171722;
+    --main-color-font: #FFFFFF;
+    --button-color: #84D52C;
+    --bar-color: #7ACB22;
+    --accent-color: #297019;
+    --card-info-bg: #212129;
+    --unactive-bg: #353542;
+    --unactive-form: #959595;
+    --choose: #30303D;
+    --outline:#606060;
+}
+
+// Миксины и Расширения  ====================================================
+
+// для использования расширения @extend %custom-focus;
+%border {
+    content: '';
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    z-index: -1;
+    border-radius: 10px;
+    background-image: linear-gradient(174.36deg, rgba(132, 213, 44, 0.36) 11.39%, rgba(23, 23, 34, 0) 189.78%);
+}
+
+// для использования миксина   @include transition(color);
+@mixin transition ($property) {
+    transition: $property .15s ease;
+}
+
+// Обнуление и общие параметры 
+@import "null";
+
+// Оболочка и прижимание футера
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	// Прижимаем footer
+	> main {
+        flex: 1 0 auto;
+	}
+    > footer {
+        flex: 0 0 auto;
+    }
+}
+
+// Подключение стилей отдельных блоков и страниц
+@import "main";
