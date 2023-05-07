@@ -46,9 +46,17 @@ h1, .h1{
        padding: 8px; 
     }
 
-  &.active, &:hover{
+  &.active{
     background-color: var(--card-info-bg);
     box-shadow: 0px 3px 15px rgba(132, 213, 44, 0.2);
+  }
+
+  @media (min-width:768px){
+    &:hover{
+      background-color: var(--card-info-bg);
+      box-shadow: 0px 3px 15px rgba(132, 213, 44, 0.2);
+    }
+
   }
 
   &::after{
@@ -166,9 +174,14 @@ h1, .h1{
   &__input {
     width: 100%;
     background-color: transparent;
+    color: var(--unactive-form);
 
     &::placeholder{
       color: var(--unactive-form);
+    }
+
+    &:focus{
+      outline: none;
     }
   }
 }
